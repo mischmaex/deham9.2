@@ -3,6 +3,8 @@ data "aws_availability_zones" "prod_vpc_azs"{}
 
 resource "aws_vpc" "prod_vpc" {
   cidr_block = "10.0.0.0/16"
+  enable_dns_hostnames = "true"
+  enable_dns_support   = "true"
   tags       =  {
     name     = "prod_vpc"
   }       
